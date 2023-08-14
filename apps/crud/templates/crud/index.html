@@ -12,13 +12,13 @@
     <a href="{{ url_for('crud.create_user') }}">新規作成</a>
     <table>
         <tr>
+            <th>ユーザーID</th>
             <th>ユーザー名</th>
             <th>メールアドレス</th>
-            <th>パスワード</th>
         </tr>
         {% for user in users %}
         <tr>
-            <td>{{ user.id }}</td>
+            <td><a href="{{ url_for('crud.edit_user', user_id=user.id) }}">{{ user.id }}</a></td>
             <td>{{ user.username }}</td>
             <td>{{ user.email }}</td>
         </tr>
