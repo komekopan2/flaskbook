@@ -19,3 +19,16 @@ class SignUpForm(FlaskForm):
             DataRequired("必須項目です"),
         ])
     submit = SubmitField('新規登録')
+
+
+class LoginForm(FlaskForm):
+    email = StringField(
+        'メールアドレス', validators=[
+            DataRequired("必須項目です"),
+            Email("メールアドレスの形式で入力してください"),
+        ])
+    password = PasswordField(
+        'パスワード', validators=[
+            DataRequired("必須項目です"),
+        ])
+    submit = SubmitField('ログイン')
